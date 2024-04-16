@@ -83,6 +83,15 @@ android {
         versionName "1.0"
     }
     signingConfigs {
+        release {
+            storeFile file('BTPN_TEST.keystore')
+            // storePassword System.console().readLine("\nKeystore password:")
+            // keyAlias System.console().readLine("\nAlias: ")
+            // keyPassword System.console().readLine("\nAlias password: ")
+            storePassword 'Gope992450'
+            keyAlias 'BTPN_TEST'
+            keyPassword 'Gope992450'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
