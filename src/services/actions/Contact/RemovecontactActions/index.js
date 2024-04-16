@@ -9,7 +9,7 @@ import {
 
 const RemovecontactAction = (req, res) =>
 {
-    console.log('req',req)
+    // console.log('req',req)
     return async dispatch =>
     {
 
@@ -28,14 +28,14 @@ const RemovecontactAction = (req, res) =>
         .then(result =>
         {
             console.log('result', result)
-            // dispatch(setSuccess(DELETE_CONTACT.SUCCEED, result.data))
-            // if(res && res.succeed) res.succeed(result.data)
+            dispatch(setSuccess(DELETE_CONTACT.SUCCEED, result.data))
+            if(res && res.succeed) res.succeed(result.data)
         })
         .catch(error =>
         {
             console.log('errorRemove', error.response)
-            // dispatch(setFail(DELETE_CONTACT.FAILED, error.response.data.errors))
-            // if(res && res.failed) res.failed()
+            dispatch(setFail(DELETE_CONTACT.FAILED, error.response.data.errors))
+            if(res && res.failed) res.failed()
         })
     }
 }

@@ -56,7 +56,6 @@ const CreateContact = ({navigation, route}) => {
     const onSubmit  = () => {
         if(route.params?.type === "Edit")
         {
-            console.log('formUpdate',formUpdate)
             dispatch(PutcontactActions(formUpdate))
             setFirstName("")
             setLastName("")
